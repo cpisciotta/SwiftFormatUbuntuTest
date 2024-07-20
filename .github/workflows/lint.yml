@@ -14,6 +14,7 @@ jobs:
     - name: Download SwiftFormat
       run: |
         wget https://github.com/nicklockwood/SwiftFormat/releases/download/${{ env.SWIFT_FORMAT_VERSION }}/swiftformat_linux.zip
+        ls -R
         chmod +x swiftformat_linux
     - name: Check Swift formatting 
       run: ./swiftformat_linux --lint .
