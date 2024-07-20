@@ -12,4 +12,4 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Run SwiftFormat
-        run: swiftformat --lint --reporter github-actions-log .
+        run: swiftformat --lint --verbose --reporter github-actions-log .
