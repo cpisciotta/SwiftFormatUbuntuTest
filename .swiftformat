@@ -1,3 +1,4 @@
 # SwiftFormat Configuration
 
 --minversion 0.54.0
+--swiftversion 5.10
