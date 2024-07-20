@@ -1,0 +1,19 @@
+name: 'Lint'
+
+on:
+  - push
+  - pull_request
+
+jobs:
+  SwiftFormat:
+    runs-on: ubuntu-latest
+    env:
+      SWIFT_FORMAT_VERSION: 0.54.0
+    steps:
+    - uses: actions/checkout@v4
+    - name: Download SwiftFormat
+      run: |
+        wget https://github.com/nicklockwood/SwiftFormat/releases/download/${{ env.SWIFT_FORMAT_VERSION }}/swiftformat_linux.zip
+        chmod +x swiftformat_linux
+    - name: Check Swift formatting 
+      run: ./swiftformat_linux --lint .
