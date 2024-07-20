@@ -8,7 +8,7 @@ jobs:
   SwiftFormat:
     runs-on: ubuntu-latest
     env:
-      SWIFT_FORMAT_VERSION: 0.54.0
+      SWIFT_FORMAT_VERSION: e4965d9e8acebb8341a6ebd20b910c882157482d
     steps:
     - uses: actions/checkout@v4
     - name: Download SwiftFormat
