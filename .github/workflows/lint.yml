@@ -11,4 +11,4 @@ jobs:
       SWIFT_FORMAT_VERSION: e4965d9e8acebb8341a6ebd20b910c882157482d
     steps:
     - uses: actions/checkout@v4
-    - run: docker run --rm -v /local/source/path:/work ghcr.io/nicklockwood/swiftformat:latest /work --lint
+    - run: docker run --rm -v /local/source/path:/work ghcr.io/nicklockwood/swiftformat:latest --lint
