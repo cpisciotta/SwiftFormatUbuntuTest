@@ -7,8 +7,9 @@ on:
 jobs:
   SwiftFormat:
     runs-on: ubuntu-latest
-    env:
-      SWIFT_FORMAT_VERSION: e4965d9e8acebb8341a6ebd20b910c882157482d
+    container:
+      image: ghcr.io/nicklockwood/swiftformat:latest
     steps:
-    - uses: actions/checkout@v4
-    - run: docker run --rm -v /local/source/path:/work ghcr.io/nicklockwood/swiftformat:latest . --lint
+      - uses: actions/checkout@v4
+      - name: Run SwiftFormat
+        run: swiftformat --lint --reporter github-actions-log .
