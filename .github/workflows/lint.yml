@@ -11,11 +11,4 @@ jobs:
       SWIFT_FORMAT_VERSION: e4965d9e8acebb8341a6ebd20b910c882157482d
     steps:
     - uses: actions/checkout@v4
-    - name: Download SwiftFormat
-      run: |
-        wget https://github.com/nicklockwood/SwiftFormat/releases/download/${{ env.SWIFT_FORMAT_VERSION }}/swiftformat_linux.zip
-        unzip swiftformat_linux.zip
-        ls -R
-        chmod +x swiftformat_linux
-    - name: Check Swift formatting 
-      run: ./swiftformat_linux --lint .
+    - run: docker run --rm -v /local/source/path:/work ghcr.io/nicklockwood/swiftformat:latest /work --lint
